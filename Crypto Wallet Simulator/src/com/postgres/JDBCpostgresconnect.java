@@ -52,16 +52,5 @@ public class JDBCpostgresconnect {
 	    	return connection;
 	    }
 	    
-	    public static void main(String[] args) {
-	    	
-	    	
-	    	JDBCpostgresconnect db = JDBCpostgresconnect.getinstanse();
-	        Connection conn = db.getconnection();
-
-	        if (conn != null) {
-	            System.out.println(" Connection is ready to use.");
-	        }
-	    }
-	    
 
 }
