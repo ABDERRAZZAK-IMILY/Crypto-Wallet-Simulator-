@@ -20,7 +20,7 @@ public class JDBCpostgresconnect {
 	    	
 	    	try(Connection connection = DriverManager.getConnection(URL , USER , PASSWORD)){
 	    		if(connection == null) {
-	    			throw new IllegalArgumentException("Fail to connect postgres sql");
+	    			throw new RuntimeException("Fail to connect postgres sql");
 	    			
 	    		}else {
 	    			System.out.println("connected succeffluy");
