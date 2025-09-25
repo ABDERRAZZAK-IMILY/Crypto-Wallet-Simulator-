@@ -15,8 +15,8 @@ public class Main {
 		
 		   logger.info("Application started");
 		
-		JDBCpostgresconnect db = JDBCpostgresconnect.getinstanse();
-	    Connection conn = db.getconnection();
+		JDBCpostgresconnect db = JDBCpostgresconnect.getInstance();
+	    Connection conn = db.getConnection();
 
 	    if (conn != null) {
 	    	

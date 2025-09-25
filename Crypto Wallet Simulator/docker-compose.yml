@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    volumes:
+      - ./src:/app/src
+      - ./logs:/app/logs
+      - ./bin:/app/bin
+    environment:
+      - DB_URL=jdbc:postgresql://db:5432/crepto
+      - DB_USER=postgres
+      - DB_PASSWORD=202580
+    depends_on:
+      - db
+    networks:
+      - crypto-network
+
+  db:
+    image: postgres:14
+ 
+
+    environment:
+     - DB_URL=jdbc:postgresql://db:5432/crepto
+     - DB_USER=postgres
+     - DB_PASSWORD=202580
+
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./sql:/docker-entrypoint-initdb.d
+    ports:
+      - "5432:5432"
+    networks:
+      - crypto-network
+  
+volumes:
+  postgres_data:
+
+networks:
+  crypto-network:
+    driver: bridge

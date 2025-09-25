@@ -26,3 +26,33 @@ sept. 25, 2025 12:34:20 PM com.postgres.JDBCpostgresconnect <init>
 INFOS: Connection successfully
 sept. 25, 2025 12:34:20 PM com.ui.Main main
 INFOS: Database connection succes
+sept. 25, 2025 3:57:19 PM com.ui.Main main
+INFOS: Application started
+sept. 25, 2025 3:57:20 PM com.postgres.JDBCpostgresconnect <init>
+INFOS: Connection successfully
+sept. 25, 2025 3:57:20 PM com.ui.Main main
+INFOS: Database connection succes
+Sep 25, 2025 2:32:16 PM com.ui.Main main
+INFO: Application started
+Sep 25, 2025 2:36:03 PM com.ui.Main main
+INFO: Application started
+Sep 25, 2025 2:40:19 PM com.ui.Main main
+INFO: Application started
+Sep 25, 2025 2:43:35 PM com.ui.Main main
+INFO: Application started
+Sep 25, 2025 2:43:35 PM com.postgres.JDBCpostgresconnect <init>
+INFO: Connection successfully
+Sep 25, 2025 2:43:35 PM com.ui.Main main
+INFO: Database connection succes
+Sep 25, 2025 2:46:59 PM com.ui.Main main
+INFO: Application started
+Sep 25, 2025 2:46:59 PM com.postgres.JDBCpostgresconnect <init>
+INFO: Connection successfully
+Sep 25, 2025 2:46:59 PM com.ui.Main main
+INFO: Database connection succes
+Sep 25, 2025 2:47:18 PM com.ui.Main main
+INFO: Application started
+Sep 25, 2025 2:47:18 PM com.postgres.JDBCpostgresconnect <init>
+INFO: Connection successfully
+Sep 25, 2025 2:47:18 PM com.ui.Main main
+INFO: Database connection succes
