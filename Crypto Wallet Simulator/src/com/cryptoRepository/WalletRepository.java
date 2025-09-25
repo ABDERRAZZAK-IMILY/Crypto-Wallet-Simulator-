@@ -11,7 +11,7 @@ import java.util.List;
 import com.model.CryptoType;
 import com.model.Wallet;
 
-public class WalletRepository  extends GenericRepositoryImpl<Wallet, Integer> {
+public class WalletRepository  extends GenericRepositoryImpl<Wallet, String> {
 
 	  public WalletRepository(Connection connection) {
 	        super(connection, "wallet");
@@ -21,8 +21,9 @@ public class WalletRepository  extends GenericRepositoryImpl<Wallet, Integer> {
 	    public void save(Wallet wallet) {
 	        try {
 	            PreparedStatement ps = connection.prepareStatement(
-	                "INSERT INTO wallet ( balance, crypto_type) VALUES (?, ?, ?)"
+	                "INSERT INTO wallet ( id ,balance, crypto_type) VALUES (?, ?, ?)"
 	            );
+	            ps.setString(1, wallet.getId());
 	            ps.setDouble(2, wallet.getBalance());
 	            ps.setString(3, wallet.getCryptoType().name());
 	            ps.executeUpdate();
@@ -33,12 +34,12 @@ public class WalletRepository  extends GenericRepositoryImpl<Wallet, Integer> {
 	    }
 
 	    @Override
-	    public Wallet findById(Integer id) {
+	    public Wallet findById(String id) {
 	        try {
 	            PreparedStatement ps = connection.prepareStatement(
 	                "SELECT * FROM wallet WHERE id = ?"
 	            );
-	            ps.setInt(1, id);
+	            ps.setString(1, id);
 	            ResultSet rs = ps.executeQuery();
 	            if (rs.next()) {
 	                return new Wallet(
@@ -59,9 +60,9 @@ public class WalletRepository  extends GenericRepositoryImpl<Wallet, Integer> {
 	            PreparedStatement ps = connection.prepareStatement(
 	                "UPDATE wallet SET  balance = ?, crypto_type = ? WHERE id = ?"
 	            );
-	            ps.setDouble(2, wallet.getBalance());
-	            ps.setString(3, wallet.getCryptoType().name());
-	            ps.setString(4, wallet.getId());
+	            ps.setDouble(1, wallet.getBalance());
+	            ps.setString(2, wallet.getCryptoType().name());
+	            ps.setString(3, wallet.getId());
 	            ps.executeUpdate();
 	            System.out.println("Wallet updated successfully!");
 	        } catch (SQLException e) {
