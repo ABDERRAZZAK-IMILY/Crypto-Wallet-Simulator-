@@ -37,6 +37,16 @@ public class JDBCpostgresconnect {
 	    }
 	    
 
+	    public void closeConnection() {
+	        if (connection != null) {
+	            try {
+	                connection.close();
+	                logger.info("Connection closed successfully");
+	            } catch (SQLException e) {
+	                logger.severe("Error closing connection: " + e.getMessage());
+	            }
+	        }
+	    }
 	    
 	    public static JDBCpostgresconnect getinstanse() {
 	    	
