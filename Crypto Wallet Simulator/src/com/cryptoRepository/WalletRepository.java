@@ -7,12 +7,18 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Logger;
 
 import com.model.CryptoType;
 import com.model.Wallet;
+import com.ui.Main;
+import com.util.AppLogger;
 
 public class WalletRepository  extends GenericRepositoryImpl<Wallet, String> {
 
+
+	private static final Logger logger = AppLogger.getLogger(Main.class.getName());
+	
 	  public WalletRepository(Connection connection) {
 	        super(connection, "wallet");
 	    }
@@ -27,7 +33,7 @@ public class WalletRepository  extends GenericRepositoryImpl<Wallet, String> {
 	            ps.setDouble(2, wallet.getBalance());
 	            ps.setString(3, wallet.getCryptoType().name());
 	            ps.executeUpdate();
-	            System.out.println("Wallet saved successfully!");
+	            logger.info("Wallet saved successfully!");
 	        } catch (SQLException e) {
 	            e.printStackTrace();
 	        }
@@ -64,7 +70,7 @@ public class WalletRepository  extends GenericRepositoryImpl<Wallet, String> {
 	            ps.setString(2, wallet.getCryptoType().name());
 	            ps.setString(3, wallet.getId());
 	            ps.executeUpdate();
-	            System.out.println("Wallet updated successfully!");
+	            logger.info("Wallet updated successfully!");
 	        } catch (SQLException e) {
 	            e.printStackTrace();
 	        }
