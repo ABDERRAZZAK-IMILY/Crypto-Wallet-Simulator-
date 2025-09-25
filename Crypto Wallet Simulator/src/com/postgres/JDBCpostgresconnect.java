@@ -9,62 +9,47 @@ import com.ui.Main;
 import com.util.AppLogger;
 
 public class JDBCpostgresconnect {
-	
+
     private static final Logger logger = AppLogger.getLogger(Main.class.getName());
 
-	   private static final String URL = "jdbc:postgresql://localhost:5432/crepto";
-	    private static final String USER = "postgres";
-	    private static final String PASSWORD = "202580";
-	    
-	    
-	    private static JDBCpostgresconnect instanse;
-	    
-	    private Connection connection;
-	    
-	    
-	    private  JDBCpostgresconnect() {
-	    	
-	    	try {
-	    		
-	    		this.connection = DriverManager.getConnection(URL , USER , PASSWORD);
-	    		
-	    		logger.info("Connection successfully");
-	    		
-	    	} catch (SQLException e) {
-				e.printStackTrace();
-			}
-	    	
-	    }
-	    
+    private static final String URL = System.getenv("DB_URL");
+    private static final String USER = System.getenv("DB_USER");
+    private static final String PASSWORD = System.getenv("DB_PASSWORD");
 
-	    public void closeConnection() {
-	        if (connection != null) {
-	            try {
-	                connection.close();
-	                logger.info("Connection closed successfully");
-	            } catch (SQLException e) {
-	                logger.severe("Error closing connection: " + e.getMessage());
-	            }
-	        }
-	    }
-	    
-	    public static JDBCpostgresconnect getinstanse() {
-	    	
-	    	
-	    			if (instanse == null) {
-	    				instanse = new JDBCpostgresconnect();
-	    			}
-	    			
-	    		
-	    	
-	    	
-	    	return instanse;
-	    }
-	    
-	    public Connection getconnection() {
-	    	
-	    	return connection;
-	    }
-	    
+    private static JDBCpostgresconnect instance;
+    private Connection connection;
 
+    private JDBCpostgresconnect() {
+        try {
+            Class.forName("org.postgresql.Driver");
+            this.connection = DriverManager.getConnection(URL, USER, PASSWORD);
+            logger.info("Connection successfully");
+        } catch (ClassNotFoundException e) {
+            logger.severe("PostgreSQL Driver not found: " + e.getMessage());
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static JDBCpostgresconnect getInstance() {
+        if (instance == null) {
+            instance = new JDBCpostgresconnect();
+        }
+        return instance;
+    }
+
+    public Connection getConnection() {
+        return connection;
+    }
+
+    public void closeConnection() {
+        if (connection != null) {
+            try {
+                connection.close();
+                logger.info("Connection closed successfully");
+            } catch (SQLException e) {
+                logger.severe("Error closing connection: " + e.getMessage());
+            }
+        }
+    }
 }
