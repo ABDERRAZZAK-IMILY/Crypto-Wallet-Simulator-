@@ -2,7 +2,7 @@ package com.model;
 
 import java.util.UUID;
 
-public class Wallet {
+public abstract class Wallet {
 
 	
 	private String id;
@@ -11,13 +11,15 @@ public class Wallet {
 	private CryptoType cryptotype;
 	
 	
-	public Wallet(String address , double balance , CryptoType cryptotype ) {
+	public Wallet(CryptoType cryptotype ) {
 		this.setId(UUID.randomUUID().toString());
-		this.address = address;
-		this.balance = balance;
+		this.address = generateAddress();
+		this.balance = 0;
 		this.cryptotype = cryptotype;
 		}
 
+	
+	public abstract String generateAddress();
 
    public String getId() {
 	   return id;
