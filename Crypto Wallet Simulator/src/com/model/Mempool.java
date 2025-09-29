@@ -66,6 +66,8 @@ public class Mempool {
         }
     }
 
+    
+    
     public double totalFees() {
         return pool.stream().mapToDouble(Transaction::getFees).reduce(0, Double::sum);
     }
