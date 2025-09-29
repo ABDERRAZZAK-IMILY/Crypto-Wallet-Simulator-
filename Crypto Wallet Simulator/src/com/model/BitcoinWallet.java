@@ -9,10 +9,12 @@ public class BitcoinWallet extends Wallet {
 		
 	}
 	
-	   @Override
-	    public String generateAddress() {
-	        return "btc" + randomString(39);
-	    }
+	@Override
+	public String generateAddress() {
+	    SecureRandom random = new SecureRandom();
+	    int length = 39 + random.nextInt(21);
+	    return "bc1" + randomString(length).toLowerCase();
+	}
 
 	   private String randomString(int length) {
 	        String chars = "ABCDEFGHJKLMNOPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz123456789";

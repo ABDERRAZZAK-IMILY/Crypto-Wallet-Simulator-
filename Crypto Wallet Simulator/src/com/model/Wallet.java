@@ -14,7 +14,7 @@ public abstract class Wallet {
 	public Wallet(CryptoType cryptotype ) {
 		this.setId(UUID.randomUUID().toString());
 		this.address = generateAddress();
-		this.balance = 0;
+		this.balance = 1000;
 		this.cryptotype = cryptotype;
 		}
 
