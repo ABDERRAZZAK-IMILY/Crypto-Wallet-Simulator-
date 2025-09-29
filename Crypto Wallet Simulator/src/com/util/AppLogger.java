@@ -29,6 +29,8 @@ public class AppLogger {
 
                 // Set log level
                 logger.setLevel(Level.ALL);
+                
+                
 
             } catch (IOException e) {
                 System.err.println("Failed to initialize logger: " + e.getMessage());
