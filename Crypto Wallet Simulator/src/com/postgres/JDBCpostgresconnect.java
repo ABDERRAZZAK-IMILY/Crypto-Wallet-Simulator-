@@ -12,9 +12,15 @@ public class JDBCpostgresconnect {
 
     private static final Logger logger = AppLogger.getLogger(Main.class.getName());
 
-    private static final String URL = System.getenv("DB_URL");
-    private static final String USER = System.getenv("DB_USER");
-    private static final String PASSWORD = System.getenv("DB_PASSWORD");
+    private static final String URL = 
+    	    System.getenv("DB_URL") != null ? System.getenv("DB_URL") : "jdbc:postgresql://localhost:5432/crepto";
+
+    	private static final String USER = 
+    	    System.getenv("DB_USER") != null ? System.getenv("DB_USER") : "postgres";
+
+    	private static final String PASSWORD = 
+    	    System.getenv("DB_PASSWORD") != null ? System.getenv("DB_PASSWORD") : "202580";
+
 
     private static JDBCpostgresconnect instance;
     private Connection connection;
