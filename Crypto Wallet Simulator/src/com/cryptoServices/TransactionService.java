@@ -28,24 +28,46 @@ public class TransactionService {
      this.walletService = walletService;
  }
 
+ 
+ 
  public Transaction createTransaction(Wallet wallet, String receiverAddress, double montant, PriorityFees priority) {
-     if (montant <= 0) {
-         throw new IllegalArgumentException("Montant must be positive");
-     }
-     String sender = wallet.getAddress();
-     validateAddress(wallet.getCryptoType(), sender);
-     validateAddress(wallet.getCryptoType(), receiverAddress);
+	    if (montant <= 0) throw new IllegalArgumentException("Montant must be positive");
+	    String sender = wallet.getAddress();
+	    validateAddress(wallet.getCryptoType(), sender);
+	    validateAddress(wallet.getCryptoType(), receiverAddress);
 
-     Transaction tx = new Transaction(sender, receiverAddress, montant, priority);
-     double fees = tx.calculateFees(wallet);
-     if (wallet.getBalance() < montant + fees) {
-         throw new IllegalArgumentException("Insufficient balance");
-     }
-     tx.setFees(fees);
-     txRepo.save(tx);
-     logger.info("Transaction created: " + tx.getId());
-     return tx;
- }
+	    Transaction tx = new Transaction(sender, receiverAddress, montant, priority);
+	    double fees = tx.calculateFees(wallet);
+	    tx.setFees(fees);
+
+	    double total = montant + fees;
+	    if (wallet.getBalance() < total) {
+	        throw new IllegalArgumentException("Insufficient balance");
+	    }
+
+	    Wallet dest = walletService.getWalletByAddress(receiverAddress);
+
+	    boolean ok;
+	    if (dest != null) {
+	        ok = walletService.transferFunds(wallet.getId(), dest.getId(), montant, fees);
+	    } else {
+	        ok = walletService.debitWallet(wallet.getId(), total);
+	    }
+
+	    if (!ok) {
+	        throw new IllegalArgumentException("Failed to update wallets (insufficient funds or DB error)");
+	    }
+
+	    txRepo.save(tx);
+	    logger.info("Transaction created: " + tx.getId());
+	    return tx;
+	}
+ 
+ 
+ 
+ 
+ 
+ 
 
  private void validateAddress(CryptoType type, String address) {
      Pattern pattern = type == CryptoType.BITCOIN ? BTC_ADDRESS_PATTERN : ETH_ADDRESS_PATTERN;
