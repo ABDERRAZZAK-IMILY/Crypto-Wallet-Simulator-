@@ -55,6 +55,8 @@ src/
 │ └── main/ # Main application entry point
 docker-compose.yml # Docker configuration
 ```
+# sql Script
+
 ``` sql
 
 CREATE TABLE IF NOT EXISTS wallets (
