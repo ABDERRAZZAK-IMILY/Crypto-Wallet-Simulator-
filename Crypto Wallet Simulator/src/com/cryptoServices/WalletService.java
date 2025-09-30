@@ -52,4 +52,12 @@ public class WalletService {
         logger.info("Transfer successful from " + sourceId + " to " + destId);
         return true;
     }
+    
+    
+    
+    public Wallet getWalletByAddress(String address) {
+        return walletRepository.findByAddress(address);
+    }
+
+    
 }
