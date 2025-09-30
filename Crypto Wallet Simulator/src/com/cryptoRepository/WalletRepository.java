@@ -63,6 +63,35 @@ public class WalletRepository extends GenericRepositoryImpl<Wallet, String> {
         return null;
     }
 
+    
+    
+    public Wallet findByAddress(String address) {
+        String sql = "SELECT * FROM wallets WHERE id = ?";
+        try (PreparedStatement ps = connection.prepareStatement(sql)) {
+            ps.setString(1, address);
+            try (ResultSet rs = ps.executeQuery()) {
+                if (rs.next()) {
+                    CryptoType type = CryptoType.valueOf(rs.getString("crypto_type"));
+                    Wallet wallet;
+                    if (type == CryptoType.BITCOIN) {
+                        wallet = new BitcoinWallet();
+                    } else {
+                        wallet = new EthereumWallet();
+                    }
+                    wallet.setAddress(rs.getString("address"));
+                    wallet.setBalance(rs.getDouble("balance"));
+                    return wallet;
+                }
+            }
+        } catch (SQLException e) {
+            logger.severe("Error finding wallet: " + e.getMessage());
+        }
+        return null;
+    }
+    
+    
+    
+    
     @Override
     public void update(Wallet wallet) {
         String sql = "UPDATE wallets SET address = ?, balance = ?, crypto_type = ? WHERE id = ?";
