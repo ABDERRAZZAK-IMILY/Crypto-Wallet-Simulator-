@@ -35,7 +35,7 @@ public class Main {
         }
 
         walletService = new WalletService(conn);
-        txService = new TransactionService(conn);
+        txService = new TransactionService(conn , walletService);
         mempoolService = new MempoolService(conn);
 
         showMenu();
