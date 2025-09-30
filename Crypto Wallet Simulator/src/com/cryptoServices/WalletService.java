@@ -22,6 +22,10 @@ public class WalletService {
             logger.warning("Cannot create null wallet");
             return;
         }
+        if (walletRepository.findByAddress(wallet.getAddress()) != null) {
+            logger.warning("Wallet address already exists: " + wallet.getAddress());
+            throw new IllegalArgumentException("Wallet address already exists");
+        }
         walletRepository.save(wallet);
         logger.info("Wallet created: " + wallet.getId());
     }
