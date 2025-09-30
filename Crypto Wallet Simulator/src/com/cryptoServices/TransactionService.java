@@ -16,13 +16,16 @@ import com.util.AppLogger;
 public class TransactionService {
 
  private final TransactionRepository txRepo;
+ private final WalletService walletService;
+ 
  private static final Logger logger = AppLogger.getLogger(TransactionService.class.getName());
 
  private static final Pattern BTC_ADDRESS_PATTERN = Pattern.compile("^[13][a-km-zA-HJ-NP-Z1-9]{25,34}$|^bc1[a-zA-HJ-NP-Z0-9]{39,59}$");
  private static final Pattern ETH_ADDRESS_PATTERN = Pattern.compile("^0x[a-fA-F0-9]{40}$");
 
- public TransactionService(Connection connection) {
+ public TransactionService(Connection connection , WalletService walletService) {
      this.txRepo = new TransactionRepository(connection);
+     this.walletService = walletService;
  }
 
  public Transaction createTransaction(Wallet wallet, String receiverAddress, double montant, PriorityFees priority) {
