@@ -62,7 +62,7 @@ public class MempoolService {
      System.out.println("──────────────────────────────────┼────────");
      for (Transaction tx : sorted) {
          String label = tx.equals(userTx) ? "> vOTRE TX: " + tx.getId() : tx.getId() + "";
-         System.out.printf("│ %-32s │ %6.2f$│%n", label, tx.getFees());
+         System.out.printf("│ %-32s │ %9f$│%n", label, tx.getFees());
      }
      System.out.println("──────────────────────────────────┴────────");
  }
@@ -81,7 +81,7 @@ public class MempoolService {
          mempool.addTransaction(tempTx);
          int pos = getPosition(tempTx);
          int time = estimateTime(tempTx);
-         System.out.printf("│ %-9s │ %6.2f$ │ %8d │ %8d min │%n", level, fees, pos, time);
+         System.out.printf("│ %-9s │ %9f$ │ %8d │ %8d min │%n", level, fees, pos, time);
          mempool.removeTransaction(tempTx);
      }
      System.out.println("└───────────┴────────┴──────────┴──────────┘");
