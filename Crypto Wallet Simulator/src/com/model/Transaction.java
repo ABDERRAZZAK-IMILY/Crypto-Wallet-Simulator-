@@ -12,6 +12,7 @@ public class Transaction {
     private double fees;
     private PriorityFees priorityFees;
     private TransactionStatus status;
+    
 
     public Transaction(String senderAddress, String receiverAddress, double montant, PriorityFees priorityFees) {
         this.id = UUID.randomUUID();
