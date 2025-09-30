@@ -4,6 +4,8 @@ package com.cryptoServices;
 import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 import java.util.logging.Logger;
 
 import com.cryptoRepository.TransactionRepository;
@@ -21,11 +23,39 @@ public class MempoolService {
  private final TransactionRepository txRepo;
  private static final Logger logger = AppLogger.getLogger(MempoolService.class.getName());
 
+ private final Timer scheduler = new Timer(true);
+ 
  public MempoolService(Connection connection) {
      this.txRepo = new TransactionRepository(connection);
      loadFromDB();
+     startAutoConfirmTask();
  }
 
+ 
+ private void startAutoConfirmTask() {
+     scheduler.scheduleAtFixedRate(new TimerTask() {
+         @Override
+         public void run() {
+             autoConfirmTransactions();
+         }
+     }, 0, 60_000);
+ }
+
+ 
+ private void autoConfirmTransactions() {
+     List<Transaction> pool = new ArrayList<>(mempool.getPool());
+     for (Transaction tx : pool) {
+         int estimatedTime = estimateTime(tx);
+         if (estimatedTime <= 0 && tx.getStatus() == TransactionStatus.PENDING) {
+             tx.setStatus(TransactionStatus.CONFIRMED);
+             txRepo.update(tx);
+             mempool.removeTransaction(tx);
+             logger.info("Transaction auto-confirmed: " + tx.getId());
+         }
+     }
+ }
+ 
+ 
  private void loadFromDB() {
      mempool.getPool().clear();
      txRepo.findAll().stream()
