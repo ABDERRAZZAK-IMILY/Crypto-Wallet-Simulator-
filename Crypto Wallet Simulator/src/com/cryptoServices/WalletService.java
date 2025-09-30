@@ -58,6 +58,19 @@ public class WalletService {
     public Wallet getWalletByAddress(String address) {
         return walletRepository.findByAddress(address);
     }
+    
+    public boolean debitWallet(String walletId, double totalAmount) {
+        Wallet source = getWalletById(walletId);
+        if (source == null || totalAmount <= 0 || source.getBalance() < totalAmount) {
+            logger.warning("Debit failed: invalid wallet or insufficient balance");
+            return false;
+        }
+        source.setBalance(source.getBalance() - totalAmount);
+        updateWallet(source);
+        logger.info("Debited " + totalAmount + " from wallet " + walletId);
+        return true;
+    }
+
 
     
 }
