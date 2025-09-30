@@ -26,7 +26,7 @@ public class TransactionRepository extends GenericRepositoryImpl<Transaction, UU
     @Override
     public void save(Transaction tx) {
         String sql = "INSERT INTO transactions " +
-                     "(id, source_address, destination_address, amount, creation_date, fees, fee_priority, status, crypto_type) " +
+                     "(id, source_address, destination_address, amount, creation_date, fees, fee_priority, status) " +
                      "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
         try (PreparedStatement ps = connection.prepareStatement(sql)) {
             ps.setObject(1, tx.getId());
@@ -37,7 +37,6 @@ public class TransactionRepository extends GenericRepositoryImpl<Transaction, UU
             ps.setDouble(6, tx.getFees());
             ps.setString(7, tx.getPriorityFees().name());
             ps.setString(8, tx.getStatus().name());
-            ps.setString(9, "BITCOIN");
             ps.executeUpdate();
             logger.info("Transaction saved: " + tx.getId());
         } catch (SQLException e) {
