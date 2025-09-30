@@ -29,3 +29,14 @@ Key features include:
 - **JDBC**: Java Database Connectivity for interacting with PostgreSQL.
 - **java.util.logging**: For application logging.
 - **Java Time API**: For date and time management.
+
+## Project Structure
+`
+src/
+├── com/
+│ ├── model/ # Wallet and Transaction classes
+│ ├── service/ # Business logic
+│ ├── repository/ # Database interactions
+│ └── main/ # Main application entry point
+docker-compose.yml # Docker configuration
+`

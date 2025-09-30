@@ -56,3 +56,211 @@ Sep 25, 2025 2:47:18 PM com.postgres.JDBCpostgresconnect <init>
 INFO: Connection successfully
 Sep 25, 2025 2:47:18 PM com.ui.Main main
 INFO: Database connection succes
+sept. 25, 2025 5:00:14 PM com.ui.Main main
+INFOS: Application started
+sept. 25, 2025 5:04:15 PM com.ui.Main main
+INFOS: Application started
+sept. 25, 2025 5:05:13 PM com.ui.Main main
+INFOS: Application started
+sept. 25, 2025 5:05:13 PM com.postgres.JDBCpostgresconnect <init>
+INFOS: Connection successfully
+sept. 25, 2025 5:05:13 PM com.ui.Main main
+INFOS: Database connection succes
+sept. 25, 2025 5:11:39 PM com.ui.Main main
+INFOS: Application started
+sept. 25, 2025 5:11:40 PM com.postgres.JDBCpostgresconnect <init>
+INFOS: Connection successfully
+sept. 25, 2025 5:11:40 PM com.ui.Main main
+INFOS: Database connection succes
+Sep 25, 2025 3:12:04 PM com.ui.Main main
+INFO: Application started
+Sep 25, 2025 3:12:05 PM com.postgres.JDBCpostgresconnect <init>
+INFO: Connection successfully
+Sep 25, 2025 3:12:05 PM com.ui.Main main
+INFO: Database connection succes
+sept. 26, 2025 11:19:36 AM com.ui.Main main
+INFOS: Application started
+sept. 26, 2025 11:19:37 AM com.postgres.JDBCpostgresconnect <init>
+INFOS: Connection successfully
+sept. 26, 2025 11:19:37 AM com.ui.Main main
+INFOS: Database connection success
+sept. 26, 2025 11:19:37 AM com.cryptoRepository.WalletRepository save
+INFOS: Wallet saved successfully!
+sept. 26, 2025 11:19:37 AM com.postgres.JDBCpostgresconnect closeConnection
+INFOS: Connection closed successfully
+sept. 26, 2025 11:19:37 AM com.ui.Main main
+INFOS: Database connection closed
+sept. 26, 2025 11:20:25 AM com.ui.Main main
+INFOS: Application started
+sept. 26, 2025 11:20:26 AM com.postgres.JDBCpostgresconnect <init>
+INFOS: Connection successfully
+sept. 26, 2025 11:20:26 AM com.ui.Main main
+INFOS: Database connection succes
+sept. 26, 2025 4:05:06 PM com.ui.Main main
+INFOS: Application started
+sept. 26, 2025 4:05:06 PM com.postgres.JDBCpostgresconnect <init>
+INFOS: Connection successfully
+sept. 26, 2025 4:05:23 PM com.cryptoRepository.WalletRepository save
+INFOS: Wallet saved successfully!
+sept. 26, 2025 4:05:23 PM com.cryptoServices.WalletService createWallet
+INFOS: Wallet created: 112
+sept. 27, 2025 6:30:49 PM com.ui.Main main
+INFOS: Application started
+sept. 27, 2025 6:30:50 PM com.postgres.JDBCpostgresconnect <init>
+INFOS: Connection successfully
+sept. 28, 2025 11:59:08 AM com.ui.Main main
+INFOS: Application started
+sept. 28, 2025 11:59:08 AM com.postgres.JDBCpostgresconnect <init>
+INFOS: Connection successfully
+sept. 28, 2025 11:59:48 AM com.ui.Main main
+INFOS: Application started
+sept. 28, 2025 11:59:50 AM com.postgres.JDBCpostgresconnect <init>
+INFOS: Connection successfully
+sept. 28, 2025 12:04:38 PM com.ui.Main main
+INFOS: Application started
+sept. 28, 2025 12:04:38 PM com.postgres.JDBCpostgresconnect <init>
+INFOS: Connection successfully
+sept. 28, 2025 12:07:10 PM com.ui.Main main
+INFOS: Application started
+sept. 28, 2025 12:07:11 PM com.postgres.JDBCpostgresconnect <init>
+INFOS: Connection successfully
+sept. 28, 2025 12:07:11 PM com.cryptoServices.MempoolService loadFromDB
+INFOS: Mempool loaded from DB
+sept. 28, 2025 12:10:42 PM com.ui.Main main
+INFOS: Application started
+sept. 28, 2025 12:10:43 PM com.postgres.JDBCpostgresconnect <init>
+INFOS: Connection successfully
+sept. 28, 2025 12:10:43 PM com.cryptoServices.MempoolService loadFromDB
+INFOS: Mempool loaded from DB
+sept. 28, 2025 12:11:01 PM com.ui.Main main
+INFOS: Application started
+sept. 28, 2025 12:11:02 PM com.postgres.JDBCpostgresconnect <init>
+INFOS: Connection successfully
+sept. 28, 2025 12:11:02 PM com.cryptoServices.MempoolService loadFromDB
+INFOS: Mempool loaded from DB
+sept. 28, 2025 12:11:18 PM com.ui.Main main
+INFOS: Application started
+sept. 28, 2025 12:11:19 PM com.postgres.JDBCpostgresconnect <init>
+INFOS: Connection successfully
+sept. 28, 2025 12:11:19 PM com.cryptoServices.MempoolService loadFromDB
+INFOS: Mempool loaded from DB
+sept. 28, 2025 12:11:36 PM com.cryptoRepository.WalletRepository save
+INFOS: Wallet saved successfully!
+sept. 28, 2025 12:11:36 PM com.cryptoServices.WalletService createWallet
+INFOS: Wallet created: 0ac6f566-06c6-43a8-9aff-eafcbe9d0420
+sept. 28, 2025 12:12:02 PM com.cryptoRepository.WalletRepository save
+INFOS: Wallet saved successfully!
+sept. 28, 2025 12:12:02 PM com.cryptoServices.WalletService createWallet
+INFOS: Wallet created: 26933a2c-c930-435c-8893-b2ede7ec130d
+sept. 28, 2025 4:38:14 PM com.ui.Main main
+INFOS: Application started
+sept. 28, 2025 4:38:16 PM com.postgres.JDBCpostgresconnect <init>
+INFOS: Connection successfully
+sept. 28, 2025 4:38:16 PM com.cryptoServices.MempoolService loadFromDB
+INFOS: Mempool loaded from DB
+sept. 28, 2025 4:53:26 PM com.ui.Main main
+INFOS: Application started
+sept. 28, 2025 4:53:27 PM com.postgres.JDBCpostgresconnect <init>
+INFOS: Connection successfully
+sept. 28, 2025 4:53:27 PM com.cryptoServices.MempoolService loadFromDB
+INFOS: Mempool loaded from DB
+sept. 28, 2025 4:56:50 PM com.ui.Main main
+INFOS: Application started
+sept. 28, 2025 4:56:51 PM com.postgres.JDBCpostgresconnect <init>
+INFOS: Connection successfully
+sept. 28, 2025 4:56:51 PM com.cryptoServices.MempoolService loadFromDB
+INFOS: Mempool loaded from DB
+sept. 28, 2025 4:57:36 PM com.ui.Main main
+INFOS: Application started
+sept. 28, 2025 4:57:37 PM com.postgres.JDBCpostgresconnect <init>
+INFOS: Connection successfully
+sept. 28, 2025 4:57:37 PM com.cryptoServices.MempoolService loadFromDB
+INFOS: Mempool loaded from DB
+sept. 28, 2025 4:58:30 PM com.ui.Main main
+INFOS: Application started
+sept. 28, 2025 4:58:32 PM com.postgres.JDBCpostgresconnect <init>
+INFOS: Connection successfully
+sept. 28, 2025 4:58:32 PM com.cryptoServices.MempoolService loadFromDB
+INFOS: Mempool loaded from DB
+sept. 28, 2025 5:00:44 PM com.ui.Main main
+INFOS: Application started
+sept. 28, 2025 5:00:44 PM com.postgres.JDBCpostgresconnect <init>
+INFOS: Connection successfully
+sept. 28, 2025 5:00:44 PM com.cryptoServices.MempoolService loadFromDB
+INFOS: Mempool loaded from DB
+sept. 28, 2025 5:01:14 PM com.ui.Main main
+INFOS: Application started
+sept. 28, 2025 5:01:16 PM com.postgres.JDBCpostgresconnect <init>
+INFOS: Connection successfully
+sept. 28, 2025 5:01:16 PM com.cryptoServices.MempoolService loadFromDB
+INFOS: Mempool loaded from DB
+sept. 28, 2025 5:01:45 PM com.ui.Main main
+INFOS: Application started
+sept. 28, 2025 5:01:46 PM com.postgres.JDBCpostgresconnect <init>
+INFOS: Connection successfully
+sept. 28, 2025 5:01:46 PM com.cryptoServices.MempoolService loadFromDB
+INFOS: Mempool loaded from DB
+sept. 28, 2025 5:08:48 PM com.ui.Main main
+INFOS: Application started
+sept. 28, 2025 5:08:49 PM com.postgres.JDBCpostgresconnect <init>
+INFOS: Connection successfully
+sept. 28, 2025 5:08:49 PM com.cryptoServices.MempoolService loadFromDB
+INFOS: Mempool loaded from DB
+sept. 28, 2025 5:11:39 PM com.ui.Main main
+INFOS: Application started
+sept. 28, 2025 5:11:40 PM com.postgres.JDBCpostgresconnect <init>
+INFOS: Connection successfully
+sept. 28, 2025 5:11:40 PM com.cryptoServices.MempoolService loadFromDB
+INFOS: Mempool loaded from DB
+sept. 28, 2025 5:12:20 PM com.ui.Main main
+INFOS: Application started
+sept. 28, 2025 5:12:21 PM com.postgres.JDBCpostgresconnect <init>
+INFOS: Connection successfully
+sept. 28, 2025 5:12:21 PM com.cryptoServices.MempoolService loadFromDB
+INFOS: Mempool loaded from DB
+sept. 29, 2025 10:34:56 AM com.ui.Main main
+INFOS: Application started
+sept. 29, 2025 10:34:57 AM com.postgres.JDBCpostgresconnect <init>
+INFOS: Connection successfully
+sept. 29, 2025 10:34:57 AM com.cryptoServices.MempoolService loadFromDB
+INFOS: Mempool loaded from DB
+sept. 29, 2025 10:36:42 AM com.ui.Main main
+INFOS: Application started
+sept. 29, 2025 10:36:43 AM com.postgres.JDBCpostgresconnect <init>
+INFOS: Connection successfully
+sept. 29, 2025 10:36:43 AM com.cryptoServices.MempoolService loadFromDB
+INFOS: Mempool loaded from DB
+sept. 29, 2025 10:37:02 AM com.cryptoRepository.WalletRepository save
+INFOS: Wallet saved successfully!
+sept. 29, 2025 10:37:02 AM com.cryptoServices.WalletService createWallet
+INFOS: Wallet created: eb9284f3-189b-4c6a-ae0c-2dcdf74eb839
+Sep 29, 2025 10:26:42 AM com.ui.Main main
+INFO: Application started
+Sep 29, 2025 10:26:43 AM com.postgres.JDBCpostgresconnect <init>
+INFO: Connection successfully
+Sep 29, 2025 10:26:43 AM com.cryptoServices.MempoolService loadFromDB
+INFO: Mempool loaded from DB
+Sep 29, 2025 10:28:32 AM com.ui.Main main
+INFO: Application started
+Sep 29, 2025 10:28:33 AM com.postgres.JDBCpostgresconnect <init>
+INFO: Connection successfully
+Sep 29, 2025 10:28:33 AM com.cryptoServices.MempoolService loadFromDB
+INFO: Mempool loaded from DB
+sept. 29, 2025 12:46:56 PM com.ui.Main main
+INFOS: Application started
+sept. 29, 2025 12:46:57 PM com.postgres.JDBCpostgresconnect <init>
+INFOS: Connection successfully
+sept. 29, 2025 12:46:57 PM com.cryptoServices.MempoolService loadFromDB
+INFOS: Mempool loaded from DB
+Sep 30, 2025 10:47:30 AM com.ui.Main main
+INFO: Application started
+Sep 30, 2025 10:47:31 AM com.postgres.JDBCpostgresconnect <init>
+INFO: Connection successfully
+Sep 30, 2025 10:47:31 AM com.cryptoServices.MempoolService loadFromDB
+INFO: Mempool loaded from DB
+Sep 30, 2025 10:48:48 AM com.ui.Main main
+INFO: Application started
+Sep 30, 2025 10:48:49 AM com.postgres.JDBCpostgresconnect <init>
+INFO: Connection successfully
+Sep 30, 2025 10:48:49 AM com.cryptoServices.MempoolService loadFromDB
+INFO: Mempool loaded from DB
