@@ -1,0 +1,20 @@
+sept. 30, 2025 10:05:16 AM com.ui.Main main
+INFOS: Application started
+sept. 30, 2025 10:05:17 AM com.postgres.JDBCpostgresconnect <init>
+INFOS: Connection successfully
+sept. 30, 2025 10:05:17 AM com.cryptoServices.MempoolService loadFromDB
+INFOS: Mempool loaded from DB
+sept. 30, 2025 10:05:26 AM com.cryptoRepository.WalletRepository save
+INFOS: Wallet saved successfully!
+sept. 30, 2025 10:05:26 AM com.cryptoServices.WalletService createWallet
+INFOS: Wallet created: ea1127f1-907e-4d27-a443-7efa29d356c2
+sept. 30, 2025 10:05:31 AM com.cryptoRepository.WalletRepository save
+INFOS: Wallet saved successfully!
+sept. 30, 2025 10:05:31 AM com.cryptoServices.WalletService createWallet
+INFOS: Wallet created: ef5f334c-c6f9-485d-9b43-69fa6b4ca593
+sept. 30, 2025 10:06:01 AM com.cryptoRepository.TransactionRepository save
+GRAVE: Error saving transaction: L'indice de la colonne est hors limite : 9, nombre de colonnes : 8.
+sept. 30, 2025 10:06:01 AM com.cryptoServices.TransactionService createTransaction
+INFOS: Transaction created: d343261c-d4e5-48ef-8df9-0a2806be0b54
+sept. 30, 2025 10:06:01 AM com.cryptoServices.MempoolService addTransaction
+INFOS: Transaction added to mempool: d343261c-d4e5-48ef-8df9-0a2806be0b54

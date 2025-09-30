@@ -1,0 +1,21 @@
+sept. 29, 2025 4:45:28 PM com.ui.Main main
+INFOS: Application started
+sept. 29, 2025 4:45:29 PM com.postgres.JDBCpostgresconnect <init>
+INFOS: Connection successfully
+sept. 29, 2025 4:45:29 PM com.cryptoServices.MempoolService loadFromDB
+INFOS: Mempool loaded from DB
+sept. 29, 2025 4:45:37 PM com.cryptoRepository.WalletRepository save
+INFOS: Wallet saved successfully!
+sept. 29, 2025 4:45:37 PM com.cryptoServices.WalletService createWallet
+INFOS: Wallet created: 3999f95d-c30a-46ca-a91b-91be59d4ae4d
+sept. 29, 2025 4:45:52 PM com.cryptoRepository.WalletRepository save
+INFOS: Wallet saved successfully!
+sept. 29, 2025 4:45:52 PM com.cryptoServices.WalletService createWallet
+INFOS: Wallet created: 2a60bae1-8f6c-43f3-918b-4c4b401f33b3
+sept. 29, 2025 4:46:45 PM com.cryptoRepository.TransactionRepository save
+GRAVE: Error saving transaction: ERREUR: la colonne « sender_address » de la relation « transactions » n'existe pas
+  Position : 31
+sept. 29, 2025 4:46:45 PM com.cryptoServices.TransactionService createTransaction
+INFOS: Transaction created: 1daea574-44c6-462d-a71e-9f488cb64573
+sept. 29, 2025 4:46:45 PM com.cryptoServices.MempoolService addTransaction
+INFOS: Transaction added to mempool: 1daea574-44c6-462d-a71e-9f488cb64573

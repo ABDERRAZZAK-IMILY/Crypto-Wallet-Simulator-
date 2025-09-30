@@ -1,0 +1,6 @@
+sept. 30, 2025 11:24:42 AM com.ui.Main main
+INFOS: Application started
+sept. 30, 2025 11:24:43 AM com.postgres.JDBCpostgresconnect <init>
+INFOS: Connection successfully
+sept. 30, 2025 11:24:43 AM com.cryptoServices.MempoolService loadFromDB
+INFOS: Mempool loaded from DB

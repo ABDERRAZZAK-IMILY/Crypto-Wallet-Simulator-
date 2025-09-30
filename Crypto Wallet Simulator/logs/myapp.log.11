@@ -1,0 +1,20 @@
+sept. 30, 2025 10:24:14 AM com.ui.Main main
+INFOS: Application started
+sept. 30, 2025 10:24:15 AM com.postgres.JDBCpostgresconnect <init>
+INFOS: Connection successfully
+sept. 30, 2025 10:24:15 AM com.cryptoServices.MempoolService loadFromDB
+INFOS: Mempool loaded from DB
+sept. 30, 2025 10:24:20 AM com.cryptoRepository.WalletRepository save
+INFOS: Wallet saved successfully!
+sept. 30, 2025 10:24:20 AM com.cryptoServices.WalletService createWallet
+INFOS: Wallet created: bb5c1d24-2656-4f2e-b570-22b92d9b2b19
+sept. 30, 2025 10:24:25 AM com.cryptoRepository.WalletRepository save
+INFOS: Wallet saved successfully!
+sept. 30, 2025 10:24:25 AM com.cryptoServices.WalletService createWallet
+INFOS: Wallet created: f475614c-ee38-4513-a0c4-cdc238f41bee
+sept. 30, 2025 10:24:51 AM com.cryptoRepository.TransactionRepository save
+INFOS: Transaction saved: 5b936367-0d1a-45a8-8f5b-e59a8ae9be78
+sept. 30, 2025 10:24:51 AM com.cryptoServices.TransactionService createTransaction
+INFOS: Transaction created: 5b936367-0d1a-45a8-8f5b-e59a8ae9be78
+sept. 30, 2025 10:24:51 AM com.cryptoServices.MempoolService addTransaction
+INFOS: Transaction added to mempool: 5b936367-0d1a-45a8-8f5b-e59a8ae9be78
