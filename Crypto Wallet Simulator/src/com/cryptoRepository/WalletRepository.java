@@ -52,6 +52,7 @@ public class WalletRepository extends GenericRepositoryImpl<Wallet, String> {
                     } else {
                         wallet = new EthereumWallet();
                     }
+                    wallet.setId(rs.getString("id"));
                     wallet.setAddress(rs.getString("address"));
                     wallet.setBalance(rs.getDouble("balance"));
                     return wallet;
@@ -66,7 +67,7 @@ public class WalletRepository extends GenericRepositoryImpl<Wallet, String> {
     
     
     public Wallet findByAddress(String address) {
-        String sql = "SELECT * FROM wallets WHERE id = ?";
+        String sql = "SELECT * FROM wallets WHERE address = ?";
         try (PreparedStatement ps = connection.prepareStatement(sql)) {
             ps.setString(1, address);
             try (ResultSet rs = ps.executeQuery()) {
@@ -78,8 +79,10 @@ public class WalletRepository extends GenericRepositoryImpl<Wallet, String> {
                     } else {
                         wallet = new EthereumWallet();
                     }
+                    wallet.setId(rs.getString("id"));
                     wallet.setAddress(rs.getString("address"));
                     wallet.setBalance(rs.getDouble("balance"));
+                    wallet.setCryptoType(type);
                     return wallet;
                 }
             }
@@ -88,6 +91,8 @@ public class WalletRepository extends GenericRepositoryImpl<Wallet, String> {
         }
         return null;
     }
+
+
     
     
     
@@ -125,8 +130,10 @@ public class WalletRepository extends GenericRepositoryImpl<Wallet, String> {
                 } else {
                     wallet = new EthereumWallet();
                 }
+                wallet.setId(rs.getString("id"));
                 wallet.setAddress(rs.getString("address"));
                 wallet.setBalance(rs.getDouble("balance"));
+                wallet.setCryptoType(type); 
                 wallets.add(wallet);
             }
         } catch (SQLException e) {
