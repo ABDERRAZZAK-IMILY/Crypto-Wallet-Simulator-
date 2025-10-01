@@ -115,3 +115,10 @@ URL ::  https://app.diagrams.net/?libs=general;uml&src=about#G1YAq6e7_go_8D3sHe-
 
 ![alt text]({82165538-F65F-4740-B83E-FA0C09B21021}.png)
 
+
+
+
+#  schéma récapitulatif 
+
+![alt text]({09A53510-0E98-473B-8F51-EF6932304BF5}.png)
+
