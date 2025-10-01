@@ -120,5 +120,4 @@ URL ::  https://app.diagrams.net/?libs=general;uml&src=about#G1YAq6e7_go_8D3sHe-
 
 #  schéma récapitulatif 
 
-![alt text]({09A53510-0E98-473B-8F51-EF6932304BF5}.png)
-
+![alt text]({E771612F-922B-4794-9DFC-5DA22ACFEBE9}.png)
