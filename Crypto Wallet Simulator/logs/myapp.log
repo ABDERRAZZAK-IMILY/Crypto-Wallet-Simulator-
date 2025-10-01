@@ -282,3 +282,9 @@ oct. 01, 2025 10:47:33 AM com.postgres.JDBCpostgresconnect <init>
 INFOS: Connection successfully
 oct. 01, 2025 10:47:33 AM com.cryptoServices.MempoolService loadFromDB
 INFOS: Mempool loaded from DB
+oct. 01, 2025 10:49:32 AM com.ui.Main main
+INFOS: Application started
+oct. 01, 2025 10:49:33 AM com.postgres.JDBCpostgresconnect <init>
+INFOS: Connection successfully
+oct. 01, 2025 10:49:33 AM com.cryptoServices.MempoolService loadFromDB
+INFOS: Mempool loaded from DB
