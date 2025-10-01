@@ -34,7 +34,11 @@ public class TransactionService {
 	    if (montant <= 0) throw new IllegalArgumentException("Montant must be positive");
 	    String sender = wallet.getAddress();
 	    validateAddress(wallet.getCryptoType(), sender);
-	    validateAddress(wallet.getCryptoType(), receiverAddress);
+       
+	    if (receiverAddress != null && !receiverAddress.isEmpty()) {
+	        validateAddress(wallet.getCryptoType(), receiverAddress);
+	    }
+	    
 
 	    Transaction tx = new Transaction(sender, receiverAddress, montant, priority);
 	    double fees = tx.calculateFees(wallet);
