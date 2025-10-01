@@ -4,16 +4,21 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
+import java.util.PriorityQueue;
 import java.util.Random;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
 public class Mempool {
 
-    private List<Transaction> pool = new ArrayList<>();
     private static Mempool instance;
+    private final PriorityQueue<Transaction> pool;
 
-    private Mempool() {}
+
+    private Mempool() {
+        pool = new PriorityQueue<>(Comparator.comparingDouble(Transaction::getFees).reversed());
+
+    }
 
     public static Mempool getInstance() {
         if (instance == null) {
@@ -31,20 +36,19 @@ public class Mempool {
     }
 
     public List<Transaction> getPool() {
-        return new ArrayList<>(pool);
+        return pool.stream()
+                   .sorted(Comparator.comparingDouble(Transaction::getFees).reversed())
+                   .collect(Collectors.toList());
     }
 
-    public List<Transaction> getSortedPool() {
-        return pool.stream()
-                .sorted(Comparator.comparingDouble(Transaction::getFees).reversed())
-                .collect(Collectors.toList());
-    }
 
     public int getPosition(Transaction tx) {
-        List<Transaction> sorted = getSortedPool();
+        List<Transaction> sorted = getPool();
         return sorted.indexOf(tx) + 1;
     }
 
+
+    
     public int estimateTime(int position) {
         return position * 10; // minutes
     }
@@ -55,15 +59,30 @@ public class Mempool {
 
     public void generateRandomTransactions(int count) {
         Random random = new Random();
+
         for (int i = 0; i < count; i++) {
             String sender = "randomSender" + random.nextInt(1000);
             String receiver = "randomReceiver" + random.nextInt(1000);
             double montant = random.nextDouble() * 100;
             PriorityFees priority = PriorityFees.values()[random.nextInt(PriorityFees.values().length)];
             Transaction tx = new Transaction(sender, receiver, montant, priority);
-            tx.setFees(random.nextDouble() * 10);
+
+            Wallet wallet;
+            if (random.nextBoolean()) {
+                wallet = new BitcoinWallet();
+            } else {
+                wallet = new EthereumWallet();
+            }
+
+            tx.calculateFees(wallet);
+
             addTransaction(tx);
         }
+    }
+
+
+    public void clear() {
+        pool.clear();
     }
 
     

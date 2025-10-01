@@ -56,15 +56,13 @@ public class MempoolService {
  }
  
  
- 
- 
  private void loadFromDB() {
-     mempool.getPool().clear();
-     txRepo.findAll().stream()
-             .filter(tx -> tx.getStatus() == TransactionStatus.PENDING)
-             .forEach(mempool::addTransaction);
-     logger.info("Mempool loaded from DB");
- }
+	    mempool.clear();
+	    txRepo.findAll().stream()
+	            .filter(tx -> tx.getStatus() == TransactionStatus.PENDING)
+	            .forEach(mempool::addTransaction);
+	    logger.info("Mempool loaded from DB");
+	}
 
  public void addTransaction(Transaction tx) {
      if (tx.getStatus() == TransactionStatus.PENDING) {
@@ -87,7 +85,7 @@ public class MempoolService {
 
  public void displayMempool(Transaction userTx) {
      System.out.println("=== ÉTAT DU MEMPOOL ===");
-     List<Transaction> sorted = mempool.getSortedPool();
+     List<Transaction> sorted = mempool.getPool();
      System.out.println("Transactions en attente : " + sorted.size());
      System.out.println("──────────────────────────────────┬────────-");
      System.out.println(" Transaction ID                   │ Frais  ");

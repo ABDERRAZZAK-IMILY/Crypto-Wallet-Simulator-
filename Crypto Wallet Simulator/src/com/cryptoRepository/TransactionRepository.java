@@ -27,7 +27,7 @@ public class TransactionRepository extends GenericRepositoryImpl<Transaction, UU
     public void save(Transaction tx) {
         String sql = "INSERT INTO transactions " +
                      "(id, source_address, destination_address, amount, creation_date, fees, fee_priority, status) " +
-                     "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                     "VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
         try (PreparedStatement ps = connection.prepareStatement(sql)) {
             ps.setObject(1, tx.getId());
             ps.setString(2, tx.getSenderAddress());
